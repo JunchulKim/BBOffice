@@ -199,6 +199,8 @@ public class FullscreenActivity extends Activity {
           HttpEntity entity = response.getEntity();
           */
         	
+        	
+        	
             
         } catch (Exception e) {
             e.printStackTrace();
