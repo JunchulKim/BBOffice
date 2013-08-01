@@ -25,7 +25,6 @@ import android.view.View;
 import android.util.Base64;
 
 
-
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
@@ -180,14 +179,14 @@ public class FullscreenActivity extends Activity {
         	}
         	
         	
-        	HttpClient httpClient = new DefaultHttpClient(); 
+       // 	HttpClient httpClient = new DefaultHttpClient(); 
 
           //HttpGet httpGet = new HttpGet("http://www.naver.com"); -> ok
           //HttpGet httpGet = new HttpGet("http://211.115.15.157:10005"); -> ok
-          HttpGet httpGet = new HttpGet("http://211.115.15.157:10005/smartlive/scls");
+       //   HttpGet httpGet = new HttpGet("http://211.115.15.157:10005/smartlive/scls");
           
-          HttpResponse httpResponse = httpClient.execute(httpGet); 
-          System.out.println(EntityUtils.toString(httpResponse.getEntity()));
+        //  HttpResponse httpResponse = httpClient.execute(httpGet); 
+        //  System.out.println(EntityUtils.toString(httpResponse.getEntity()));
               
          
           /*
