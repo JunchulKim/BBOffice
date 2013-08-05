@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SmartLiveOn</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="Back">Back</string>
+    <string name="Home">Home</string>
+    <string name="Main_title">알리온 블랙박스 모니터링</string>
+    <string name="Main_Settings">환경설정</string>
+    <string name="Main_LiveView">실시간영상보기</string>
+    <string name="Main_LatestShockView">최신충격보기</string>
+    <string name="Main_ShockViewList">충격영상목록</string>
+    <string name="Main_Help">도움말</string>
+    <string name="Settings_ProductRegistration">블랙박스 번호 등록</string>
+    <string name="Settings_ChangePW">비밀번호 변경</string>
+    <string name="Settings_TransferSettings">전송 설정</string>
+    <string name="Settings_Cancle">취소</string>
+    <string name="BB_Phone">블랙박스 전화번호</string>
+    <string name="BB_Password">블랙박스 비밀번호</string>
+    <string name="BB_Hint1">전화번호 입력</string>
+    <string name="BB_Hint2">비밀번호 입력</string>
+    <string name="BB_LeftText">등록</string>
+    <string name="Change_Password">비밀번호 변경</string>
+    <string name="Change_Confirm">현재 비밀번호</string>
+    <string name="Change_Retry">비밀번호 재입력</string>
+    <string name="Change_Hint1">현재 비밀번호 입력</string>
+    <string name="Change_Hint2">변경 비밀번호 입력</string>
+    <string name="Change_LeftText">적용</string>
+    <string name="Transfer_Settings">전송 설정</string>
+    <string name="Transfer_SMS">문자 알림</string>
+    <string name="Transfer_Frame">영상 프레임\n(초당)</string>
+    <string name="Transfer_LeftText">적용</string>
+    <string name="NotiSMS_ON">ON</string>
+    <string name="NotiSMS_OFF">OFF</string>
+    <string name="ImageFrame_1sec">1</string>
+    <string name="ImageFrame_3sec">3</string>
+    <string name="ImageFrame_5sec">5</string>
+</resources>

@@ -1,0 +1,102 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <!-- top Layer -->
+
+    <LinearLayout
+        android:id="@+id/ToptitleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#000000"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/MiddleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:background="@drawable/detailview_bg"
+        android:baselineAligned="false"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/MiddleLeftSpace"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" > <!-- weight중첩 사용으로 퍼포먼스가 떨어진다는 경고!!  -->
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/MiddleCenterSpace"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/btn_Settings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/Main_Settings"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_LiveView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/Main_LiveView"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_LatestShockView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/Main_LatestShockView"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_ShockViewList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/Main_ShockViewList"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_Help"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/Main_Help"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/MiddleRightSpace"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/BottomLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/jebu_list_introduce"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+</LinearLayout>
