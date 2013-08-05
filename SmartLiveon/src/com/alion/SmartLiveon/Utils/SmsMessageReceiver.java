@@ -82,6 +82,7 @@ public class SmsMessageReceiver extends BroadcastReceiver {
 
         mNotificationManager.notify(notificationId, mNotification);
         
+        
    /*     
         // error  
         Notification.Builder notification = new Notification.Builder(context)

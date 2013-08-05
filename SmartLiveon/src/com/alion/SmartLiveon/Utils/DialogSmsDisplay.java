@@ -92,6 +92,7 @@ public class DialogSmsDisplay extends Activity {
    		         startActivity(intent);
                 }
 			
+              
               Log.i(LOG_TAG, "DIALOG_SHOW_MESSAGE: " + mMessage);
               
                  /*
