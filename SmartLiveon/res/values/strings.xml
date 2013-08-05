@@ -8,6 +8,7 @@
     <!-- Name of the done button on dialog. [CHAR LIMIT=NONE] -->
     <string name="sms_done_button">Done</string>
     
+    
     <string name="app_name">SmartLiveOn</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>

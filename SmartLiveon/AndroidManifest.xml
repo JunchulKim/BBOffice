@@ -32,6 +32,7 @@
             </intent-filter>
         </activity>
         
+        
         <activity android:name="com.alion.SmartLiveon.Utils.DialogSmsDisplay"
                   android:launchMode="singleTop" />
 
