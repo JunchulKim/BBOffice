@@ -3,6 +3,7 @@ package com.alion.SmartLiveon;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,13 +16,45 @@ import android.widget.TextView;
 public class SmartLiveon_Main extends Activity implements OnClickListener {
 
 	static private String TAG = "BB_MainActivity";
+	
+    public static final String SMS_LITE_PREFS_KEY = "sms_lite_prefs";
+    public static final String PREF_KEY_NOTIFICATION_ID = "notification_id";
+    
+    static SmartLiveon_Main gBSmartLiveon_Main;
 
+    public static SmartLiveon_Main getSmartLiveon_Main() {
+        return gBSmartLiveon_Main;
+    }
+    
+    // Each incoming sms gets its own notification. We have to use a new unique notification id
+    // for each one.
+    public int getNextNotificationId() {
+        SharedPreferences prefs = getSharedPreferences(SMS_LITE_PREFS_KEY,
+                Activity.MODE_PRIVATE);
+        int notificationId = prefs.getInt(PREF_KEY_NOTIFICATION_ID, 0);
+        ++notificationId;
+        if (notificationId > 32765) {
+            notificationId = 1;     // wrap around before it gets dangerous
+        }
+        // Save the updated notificationId in SharedPreferences
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putInt(PREF_KEY_NOTIFICATION_ID, notificationId);
+        editor.apply();
+
+        Log.d(TAG, "getNextNotificationId: " + notificationId);
+
+        return notificationId;
+    }
+    
+    
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		ClickListener_init(); // Listener 등록
 		TopLayer_Init(); // top layer 설정
+		
+		gBSmartLiveon_Main = this;
 	}
 
 	public void ClickListener_init() {

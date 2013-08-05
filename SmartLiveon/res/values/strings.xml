@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-
+    
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Name of this application. [CHAR LIMIT=NONE] -->
+    <string name="sms_app_name">Simple message receiver</string>
+    <!-- Dialog title. [CHAR LIMIT=NONE] -->
+    <string name="sms_message_from_format">Message from <xliff:g id="userName">%1$s</xliff:g></string>
+    <!-- Name of the done button on dialog. [CHAR LIMIT=NONE] -->
+    <string name="sms_done_button">Done</string>
+    
     <string name="app_name">SmartLiveOn</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
@@ -36,4 +43,5 @@
     <string name="ImageFrame_1sec">1</string>
     <string name="ImageFrame_3sec">3</string>
     <string name="ImageFrame_5sec">5</string>
+
 </resources>
