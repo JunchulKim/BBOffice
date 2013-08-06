@@ -178,8 +178,9 @@ public class FullscreenActivity extends Activity {
         	// iterates over the files and prints details for each
         	DateFormat dateFormater = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         	
-    //      ftpClient.enterRemotePassiveMode(); //<-- 이 메소드를 해준다음에
-    //      ftpClient.enterLocalPassiveMode(); //<-- 이 메소드를 해주면 가능하네용..
+          ftpClient.enterRemotePassiveMode(); 
+          ftpClient.enterLocalPassiveMode(); 
+          // 이 두함수 없으면 listFiles이 안되고 있으면 retrieveFile 에서 멈춘다.
           
           files = ftpClient.listFiles();
           
@@ -196,28 +197,43 @@ public class FullscreenActivity extends Activity {
   
     	try
     	{
-    		   System.out.println("---8-------------------------------------");
+    		 System.out.println("---8-------------------------------------");
+    		 ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
     		   
-    	//		  ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
-    			  
-    		   
-    		 File   localfile  = new File("/mnt/sdcard/watermark.jpg");
-    		 String remoteFile = "/watermark.jpg";
+    		 File   localfile  = new File("/mnt/sdcard/3watermark.jpg");
+    		 String remoteFile = "watermark.jpg";
     		 
+    	    FileOutputStream out = null;
+    	    InputStream in = null;
+   		 
     		fos    = new FileOutputStream(localfile);        //  다운로드할 File 생성
     		ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
+    		ftpClient.setControlKeepAliveTimeout(30); // set timeout to 30 sec
     		 
     	    try
     	    {
-    	        ftpClient.retrieveFile(remoteFile, fos); // (Permission denied)
-    	    }
+     	    	//ftpClient.retrieveFile("/" + remoteFile, fos);
+     	    	ftpClient.retrieveFile(remoteFile, fos);
+    	        
+     	       //in = (InputStream) ftpClient.retrieveFileStream("/" + remoteFile);
+       	    }
     	    catch (Exception ex)
     	    {
-    	       // return new FTPFile[]{};
-    	    	 fos.close();        // Stream 닫기
+    	    	 fos.close();        
     	    	 ftpClient.logout();
     	    	 ftpClient.disconnect();
     	    }
+    	    
+     	   //ftpClient.retrieveFile(remoteFile, fos); // (Permission denied)
+    		   
+    		/* 
+          // APPROACH #1: using retrieveFile(String, OutputStream)
+          String remoteFile1 = "watermark.jpg";
+          File downloadFile1 = new File("/mnt/sdcard/watermark.jpg");
+          OutputStream outputStream1 = new BufferedOutputStream(new FileOutputStream(downloadFile1));
+          boolean success = ftpClient.retrieveFile(remoteFile1, outputStream1);
+          outputStream1.close();
+            */
            
     	}
     	catch(Exception ex)
@@ -230,7 +246,7 @@ public class FullscreenActivity extends Activity {
             {
              try
                 {
-                   fos.close();        // Stream 닫기
+                   fos.close();       
                 }
               catch(Exception ex)
                 {
