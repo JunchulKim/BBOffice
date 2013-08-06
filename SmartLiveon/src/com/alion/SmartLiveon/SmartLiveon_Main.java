@@ -15,8 +15,16 @@ import android.widget.TextView;
 
 public class SmartLiveon_Main extends Activity implements OnClickListener {
 
-	static private String TAG = "BB_MainActivity";
+	static private String TAG = "SmartLiveon_MainActivity";
 	
+	//FTP Setting 
+	public static String InstallPath = "/mnt/sdcard/allion";
+	public static String LocalStoragePath = "/mnt/sdcard";
+	public static String LocalExternalStoragePath = "/mnt/sdcard/external_sd";
+	
+	//Register Setting
+	
+	// SMS 
     public static final String SMS_LITE_PREFS_KEY = "sms_lite_prefs";
     public static final String PREF_KEY_NOTIFICATION_ID = "notification_id";
     
