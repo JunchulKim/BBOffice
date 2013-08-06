@@ -1,10 +1,15 @@
 package com.alion.SmartLiveon;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +17,7 @@ import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class SmartLiveon_Main extends Activity implements OnClickListener {
 
@@ -24,7 +30,7 @@ public class SmartLiveon_Main extends Activity implements OnClickListener {
 	
 	//Register Setting
 	
-	// SMS 
+	//SMS 
     public static final String SMS_LITE_PREFS_KEY = "sms_lite_prefs";
     public static final String PREF_KEY_NOTIFICATION_ID = "notification_id";
     
@@ -61,7 +67,7 @@ public class SmartLiveon_Main extends Activity implements OnClickListener {
 		setContentView(R.layout.activity_main);
 		ClickListener_init(); // Listener 등록
 		TopLayer_Init(); // top layer 설정
-		
+		Register_Init();
 		gBSmartLiveon_Main = this;
 	}
 
@@ -88,6 +94,40 @@ public class SmartLiveon_Main extends Activity implements OnClickListener {
 		Iv_home.setVisibility(View.INVISIBLE); // 버튼 감추기
 		Tv_title.setText(R.string.Main_title); // 타이틀 입력
 	}
+	
+	public void Register_Init() {
+		
+ 	  //TODO 나중에 확인할것.
+	  /*	
+	  String state = Environment.getExternalStorageState();
+	  File externalstoragepath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+	  
+	  try {
+
+			File file = new File(InstallPath); 
+			  
+			if ( state.equals(Environment.MEDIA_MOUNTED)) {
+			   
+			    // TODO   1.프로그램 처음에 부팅후 First Register Setting
+			if( !file.exists() )  // 원하는 경로에 폴더가 있는지 확인
+			   file.mkdirs();
+			    
+			}else  if  (Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)) { 
+			  //mExternalStorageAvailable = true; 
+			  //mExternalStorageWriteable = false; 
+			} else { 
+			  Toast.makeText(SmartLiveon_Main.this, "NO SD Card ", Toast.LENGTH_SHORT).show();
+			  //return  STATUS_NO_STORAGE; 
+			} 
+      
+	  } catch (Exception e) {
+		  
+		   e.printStackTrace();
+	  }
+	  */
+		
+	}
+      
 
 	/*
 	 * // 하단 세팅키 제거
