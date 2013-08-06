@@ -182,7 +182,10 @@ public class FullscreenActivity extends Activity {
           ftpClient.enterLocalPassiveMode(); 
           // 이 두함수 없으면 listFiles이 안되고 있으면 retrieveFile 에서 멈춘다.
           
-          files = ftpClient.listFiles();
+//        files = ftpClient.listFiles();
+          
+          //ftpClient.changeWorkingDirectory("/01031962223");      // 접속하는 서버 작업 디렉토리 변경시
+          //files = ftpClient.listFiles();
           
        	for (FTPFile file : files) {
         		
@@ -214,7 +217,7 @@ public class FullscreenActivity extends Activity {
     	    {
      	    	//ftpClient.retrieveFile("/" + remoteFile, fos);
      	    	ftpClient.retrieveFile(remoteFile, fos);
-    	        
+
      	       //in = (InputStream) ftpClient.retrieveFileStream("/" + remoteFile);
        	    }
     	    catch (Exception ex)
@@ -226,14 +229,6 @@ public class FullscreenActivity extends Activity {
     	    
      	   //ftpClient.retrieveFile(remoteFile, fos); // (Permission denied)
     		   
-    		/* 
-          // APPROACH #1: using retrieveFile(String, OutputStream)
-          String remoteFile1 = "watermark.jpg";
-          File downloadFile1 = new File("/mnt/sdcard/watermark.jpg");
-          OutputStream outputStream1 = new BufferedOutputStream(new FileOutputStream(downloadFile1));
-          boolean success = ftpClient.retrieveFile(remoteFile1, outputStream1);
-          outputStream1.close();
-            */
            
     	}
     	catch(Exception ex)
