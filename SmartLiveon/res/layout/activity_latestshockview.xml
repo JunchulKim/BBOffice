@@ -18,11 +18,58 @@
         android:id="@+id/MiddleLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="9"
+        android:layout_weight="5"
         android:background="@drawable/detailview_bg"
         android:baselineAligned="false"
-        android:gravity="center"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/IV_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:contentDescription="@string/IV_contents" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/BottomLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:background="@drawable/jebu_list_introduce"
+        android:orientation="vertical" >
+
+     
+        <LinearLayout
+            android:id="@+id/Button_layer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
         android:orientation="horizontal" >
+                <Button
+                android:id="@+id/Btn_Reward"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Rewind" />
+
+            <Button
+                android:id="@+id/Btn_Play_Pause"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Play" />
+
+            <Button
+                android:id="@+id/Btn_Forward"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Forward" />
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>

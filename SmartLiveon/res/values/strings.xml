@@ -45,4 +45,5 @@
     <string name="ImageFrame_3sec">3</string>
     <string name="ImageFrame_5sec">5</string>
 
+<string name="IV_contents">영상보기</string>
 </resources>
